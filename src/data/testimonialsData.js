@@ -1,55 +1,31 @@
 /* eslint-disable */
-import girl1 from '../assets/svg/testimonials/girl1.svg'
-import girl2 from '../assets/svg/testimonials/girl2.svg'
-import girl3 from '../assets/svg/testimonials/girl3.svg'
-import boy1 from '../assets/svg/testimonials/boy1.svg'
-import boy2 from '../assets/svg/testimonials/boy2.svg'
-import boy3 from '../assets/svg/testimonials/boy3.svg'
-
-
+import girl1 from "../assets/svg/testimonials/girl1.svg";
+import girl2 from "../assets/svg/testimonials/girl2.svg";
+import girl3 from "../assets/svg/testimonials/girl3.svg";
+import boy1 from "../assets/svg/testimonials/boy1.svg";
+import boy2 from "../assets/svg/testimonials/boy2.svg";
+import boy3 from "../assets/svg/testimonials/boy3.svg";
 
 export const testimonialsData = [
-    {
-        id: 1,
-        name: 'Chandler Bing',
-        title: 'Transponster',
-        text: "Building my own portfolio could've never been easier than this. The only areas I'm good at are Math, Jokes and Dance.",
-        image: boy2
-    },
-    {
-        id: 2,
-        name: 'Monica Geller',
-        title: 'Head Chef',
-        text: "This is the only thing that I didn't have to spend time to sort out. It's tidy all by itself.",
-        image: girl2
-    },
-    {
-        id: 3,
-        name: 'Phoebe Buffay',
-        title: 'Massuese',
-        text: "Heard of the song 'Smelly Cat!!' ? This website made it viral. Plus portfolio is the only thing that Ursula doesn't have :)",
-        image: girl1
-    },
-    {
-        id: 4,
-        name: 'Joey Tribbiani',
-        title: 'Actor',
-        text: "Making my portfolio with this helped me get my role as 'Dr. Drake Ramoray' in 'Days Of Our Lives'. You guys are the best !",
-        image: boy1
-    },
-    {
-        id: 5,
-        name: 'Rachel Green',
-        title: 'Sales Executive',
-        text: 'Ralph Lauren was one of the best things that ever happened to me. My portfolio made that dream happen. I owe you guys.',
-        image: girl3
-    },
-    {
-        id: 6,
-        name: 'Ross Geller',
-        title: 'Paleontologist',
-        text: "Be it 'Rocks' or 'Bones', you need a website to display it. This is it. Great work guys !",
-        image: boy3
-    }
-]
-
+  {
+    id: 1,
+    name: "Aplesh Doshi",
+    title: "CEO Fintricity",
+    text: "I have worked very closely with Himanshu Gunwant during the internship that he has served as a Frontend Web Developer Intern at Fintricity. Himanshu has excelled in this role, exhibiting one of the highest levels of productivity. He produces a high volume of work while consistently maintaining high standards for quality and accuracy.",
+    image: "/images/alpesh.png",
+  },
+  {
+    id: 2,
+    name: "Nikhil Kumar",
+    title: "Software Enginner",
+    text: 'Himanshu possesses the ultimate "can do" attitude while taking on all tasks with a positive energy and a smile. His upbeat personality and engaging personal style enable him to interact effectively with other employees. He is very well organized and keeps track of the details.',
+    image: "/images/nikhil.png",
+  },
+  {
+    id: 3,
+    name: "Tarun Singh",
+    title: "Data Scientist",
+    text: "All the intangibles that lead to success in the workplace are in order with Himanshu. There will be no unpleasant surprises and I am confident he will fit in and add to office morale.",
+    image: "/images/tarun.png",
+  },
+];

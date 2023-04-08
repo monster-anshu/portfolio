@@ -16,10 +16,10 @@ import {
   pinkThemeDark,
   yellowThemeLight,
   yellowThemeDark,
-} from '../theme/theme';
+} from "../theme/theme";
 
 export const themeData = {
-  theme: blueThemeDark,
+  theme: yellowThemeDark,
 };
 
 // Choose theme from above
