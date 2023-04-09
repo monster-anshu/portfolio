@@ -1,23 +1,25 @@
-import React, { useContext } from 'react';
+import React, { useContext } from 'react'
 
-import { ThemeContext } from '../../contexts/ThemeContext';
+import { ThemeContext } from '../../contexts/ThemeContext'
 
-import './Education.css'
-import EducationCard from './EducationCard';
+import EducationCard from './EducationCard'
 
 import { educationData } from '../../data/educationData'
+import styles from './Education.module.css'
 
 function Education() {
-
-    const { theme } = useContext(ThemeContext);
+    const { theme } = useContext(ThemeContext)
     return (
-        <div className="education" id="resume" style={{backgroundColor: theme.secondary}}>
-           
-            <div className="education-body">
-                <div className="education-description">
-                <h1 style={{color:theme.primary}}>Education</h1>
-                    {educationData.map(edu => (
-                        <EducationCard 
+        <div
+            className={styles['education']}
+            id="resume"
+            style={{ backgroundColor: theme.secondary }}
+        >
+            <div className={styles['education-body']}>
+                <div className={styles['education-description']}>
+                    <h1 style={{ color: theme.primary }}>Education</h1>
+                    {educationData.map((edu) => (
+                        <EducationCard
                             key={edu.id}
                             id={edu.id}
                             institution={edu.institution}
@@ -27,8 +29,8 @@ function Education() {
                         />
                     ))}
                 </div>
-                <div className="education-image">
-                    <img src={theme.eduimg} alt=""/>
+                <div className={styles['education-image']}>
+                    <img src={theme.eduimg} alt="" />
                 </div>
             </div>
         </div>

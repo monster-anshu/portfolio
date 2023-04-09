@@ -1,10 +1,9 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { FaPlay, FaCode } from 'react-icons/fa';
-import Fade from 'react-reveal/Fade';
+import React from 'react'
+import { makeStyles } from '@material-ui/core/styles'
+import { FaPlay, FaCode } from 'react-icons/fa'
+import Fade from 'react-reveal/Fade'
 
-import placeholder from '../../../assets/png/placeholder.png';
-import './SingleProject.css';
+import styles from './SingleProject.module.css'
 
 function SingleProject({ id, name, desc, tags, code, demo, image, theme }) {
     const useStyles = makeStyles((t) => ({
@@ -30,30 +29,33 @@ function SingleProject({ id, name, desc, tags, code, demo, image, theme }) {
             transition: 'all 0.2s',
             '&:hover': {},
         },
-    }));
+    }))
 
-    const classes = useStyles();
+    const classes = useStyles()
 
     return (
         <Fade bottom>
             <div
                 key={id}
-                className='singleProject'
+                className={styles['singleProject']}
                 style={{ backgroundColor: theme.primary400 }}
             >
-                <div className='projectContent'>
+                <div className={styles['projectContent']}>
                     <h2
                         id={name.replace(' ', '-').toLowerCase()}
                         style={{ color: theme.tertiary }}
                     >
                         {name}
                     </h2>
-                    <img src={image ? image : placeholder} alt={name} />
-                    <div className='project--showcaseBtn'>
+                    <img
+                        src={image ? image : '/assets/png/placeholder.png'}
+                        alt={name}
+                    />
+                    <div className={styles['project--showcaseBtn']}>
                         <a
                             href={demo}
-                            target='_blank'
-                            rel='noreferrer'
+                            target="_blank"
+                            rel="noreferrer"
                             className={classes.iconBtn}
                             aria-labelledby={`${name
                                 .replace(' ', '-')
@@ -66,13 +68,13 @@ function SingleProject({ id, name, desc, tags, code, demo, image, theme }) {
                                     .replace(' ', '-')
                                     .toLowerCase()}-demo`}
                                 className={classes.icon}
-                                aria-label='Demo'
+                                aria-label="Demo"
                             />
                         </a>
                         <a
                             href={code}
-                            target='_blank'
-                            rel='noreferrer'
+                            target="_blank"
+                            rel="noreferrer"
                             className={classes.iconBtn}
                             aria-labelledby={`${name
                                 .replace(' ', '-')
@@ -85,13 +87,13 @@ function SingleProject({ id, name, desc, tags, code, demo, image, theme }) {
                                     .replace(' ', '-')
                                     .toLowerCase()}-code`}
                                 className={classes.icon}
-                                aria-label='Code'
+                                aria-label="Code"
                             />
                         </a>
                     </div>
                 </div>
                 <p
-                    className='project--desc'
+                    className={styles['project--desc']}
                     style={{
                         background: theme.secondary,
                         color: theme.tertiary,
@@ -100,7 +102,7 @@ function SingleProject({ id, name, desc, tags, code, demo, image, theme }) {
                     {desc}
                 </p>
                 <div
-                    className='project--lang'
+                    className={styles['project--lang']}
                     style={{
                         background: theme.secondary,
                         color: theme.tertiary80,
@@ -112,7 +114,7 @@ function SingleProject({ id, name, desc, tags, code, demo, image, theme }) {
                 </div>
             </div>
         </Fade>
-    );
+    )
 }
 
-export default SingleProject;
+export default SingleProject

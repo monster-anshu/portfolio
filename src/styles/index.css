@@ -7,23 +7,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&display=swap');
 
 @font-face {
-  font-family: 'BestermindRegular';
-  src: url('./assets/fonts/Bestermind/BestermindRegular.ttf'); 
-  src: url('./assets/fonts/Bestermind/BestermindRegular.ttf') format('embedded-opentype'), 
-       url('./assets/fonts/Bestermind/BestermindRegular.ttf')  format('truetype'), 
+    font-family: 'BestermindRegular';
+    src: url('/assets/fonts/Bestermind/BestermindRegular.ttf');
+    src: url('/assets/fonts/Bestermind/BestermindRegular.ttf')
+            format('embedded-opentype'),
+        url('/assets/fonts/Bestermind/BestermindRegular.ttf') format('truetype');
 }
 
 * {
-  margin: 0;
-  box-sizing: border-box;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
-
-
-/* scrollBar */
 
 ::-webkit-scrollbar {
     width: 10px;
@@ -34,30 +32,27 @@ a {
 }
 ::-webkit-scrollbar-thumb {
     background: #555;
-  border-radius: 10px;
-  transition: 0.3s;
+    border-radius: 10px;
+    transition: 0.3s;
 }
 
-img{
-  -webkit-touch-callout: none; 
+img {
+    -webkit-touch-callout: none;
     -webkit-user-select: none;
-     -khtml-user-select: none; 
-       -moz-user-select: none;
-        -ms-user-select: none; 
-            user-select: none; 
-
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
-
 
 @media screen and (max-width: 400px) {
-  body {
-    overflow-x: hidden;
-  }
+    body {
+        overflow-x: hidden;
+    }
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 
-  480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2/3) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2/3) {
     body {
-      overflow-x: hidden;
+        overflow-x: hidden;
     }
 }

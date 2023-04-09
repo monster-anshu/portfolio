@@ -1,0 +1,34 @@
+@import url('~slick-carousel/slick/slick.css');
+@import url('~slick-carousel/slick/slick-theme.css');
+
+:root {
+    --primaryFont: 'Poppins', sans-serif;
+    /* --primaryFont: 'Montserrat', sans-serif; */
+    /* --primaryFont: 'Raleway', sans-serif; */
+}
+html {
+    scroll-behavior: smooth;
+}
+
+/* SLIDER STYLES */
+.slick-slider {
+    height: 100% !important;
+    width: 100%;
+}
+
+.slick-initialized {
+    overflow: hidden;
+}
+
+.slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.slick-dots {
+    position: relative !important;
+    bottom: 1rem !important;
+}

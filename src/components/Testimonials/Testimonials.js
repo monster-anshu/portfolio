@@ -1,17 +1,16 @@
-import React, { useContext, useRef } from 'react';
+import React, { useContext, useRef } from 'react'
 
-import Slider from 'react-slick';
+import Slider from 'react-slick'
 
-import { FaQuoteLeft, FaArrowRight, FaArrowLeft } from 'react-icons/fa';
+import { FaQuoteLeft, FaArrowRight, FaArrowLeft } from 'react-icons/fa'
 
-import { ThemeContext } from '../../contexts/ThemeContext';
-import { testimonialsData } from '../../data/testimonialsData';
-
-import './Testimonials.css';
+import { ThemeContext } from '../../contexts/ThemeContext'
+import { testimonialsData } from '../../data/testimonialsData'
+import styles from './Testimonials.module.css'
 
 function Testimonials() {
-    const { theme } = useContext(ThemeContext);
-    const sliderRef = useRef();
+    const { theme } = useContext(ThemeContext)
+    const sliderRef = useRef()
 
     const settings = {
         dots: true,
@@ -28,44 +27,53 @@ function Testimonials() {
         draggable: true,
         swipeToSlide: true,
         swipe: true,
-    };
+    }
 
     const gotoNext = () => {
-        sliderRef.current.slickNext();
-    };
+        sliderRef.current.slickNext()
+    }
 
     const gotoPrev = () => {
-        sliderRef.current.slickPrev();
-    };
+        sliderRef.current.slickPrev()
+    }
 
     return (
         <>
             {testimonialsData.length > 0 && (
                 <div
-                    className='testimonials'
+                    className={styles['testimonials']}
                     style={{ backgroundColor: theme.primary }}
+                    id="testimonials"
                 >
-                    <div className='testimonials--header'>
+                    <div className={styles['testimonials--header']}>
                         <h1 style={{ color: theme.secondary }}>Testimonials</h1>
                     </div>
-                    <div className='testimonials--body'>
+                    <div className={styles['testimonials--body']}>
                         <FaQuoteLeft
-                            className='quote'
+                            className={styles['quote']}
                             style={{ color: theme.secondary }}
                         />
                         <div
-                            className='testimonials--slider'
+                            className={styles['testimonials--slider']}
                             style={{ backgroundColor: theme.primary }}
                         >
                             <Slider {...settings} ref={sliderRef}>
                                 {testimonialsData.map((test) => (
                                     <div
-                                        className='single--testimony'
+                                        className={styles['single--testimony']}
                                         key={test.id}
                                     >
-                                        <div className='testimonials--container'>
+                                        <div
+                                            className={
+                                                styles[
+                                                    'testimonials--container'
+                                                ]
+                                            }
+                                        >
                                             <div
-                                                className='review--img'
+                                                className={
+                                                    styles['review--img']
+                                                }
                                                 style={{
                                                     backgroundColor:
                                                         theme.secondary,
@@ -77,7 +85,9 @@ function Testimonials() {
                                                 />
                                             </div>
                                             <div
-                                                className='review--content'
+                                                className={
+                                                    styles['review--content']
+                                                }
                                                 style={{
                                                     backgroundColor:
                                                         theme.secondary,
@@ -93,23 +103,23 @@ function Testimonials() {
                                 ))}
                             </Slider>
                             <button
-                                className='prevBtn'
+                                className={styles['prevBtn']}
                                 onClick={gotoPrev}
                                 style={{ backgroundColor: theme.secondary }}
                             >
                                 <FaArrowLeft
                                     style={{ color: theme.primary }}
-                                    aria-label='Previous testimonial'
+                                    aria-label="Previous testimonial"
                                 />
                             </button>
                             <button
-                                className='nextBtn'
+                                className={styles['nextBtn']}
                                 onClick={gotoNext}
                                 style={{ backgroundColor: theme.secondary }}
                             >
                                 <FaArrowRight
                                     style={{ color: theme.primary }}
-                                    aria-label='Next testimonial'
+                                    aria-label="Next testimonial"
                                 />
                             </button>
                         </div>
@@ -117,7 +127,7 @@ function Testimonials() {
                 </div>
             )}
         </>
-    );
+    )
 }
 
-export default Testimonials;
+export default Testimonials
