@@ -27,17 +27,17 @@ function Main() {
 
             <Navbar />
             <Landing />
-            <About />
-            <Education />
-            <Skills />
-            <Experience />
-            <Projects />
-            <Achievement />
-            <Services />
-            <Testimonials />
+            {/* <About /> */}
+            {/* <Education /> */}
+            {/* <Skills /> */}
+            {/* <Experience /> */}
+            {/* <Projects /> */}
+            {/* <Achievement /> */}
+            {/* <Services /> */}
+            {/* <Testimonials /> */}
             {/* <Blog /> */}
-            <Contacts />
-            <Footer />
+            {/* <Contacts /> */}
+            {/* <Footer /> */}
         </div>
     )
 }

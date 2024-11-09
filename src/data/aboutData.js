@@ -1,8 +1,8 @@
 export const aboutData = {
   title: 'Who I am',
   description1:
-    "My name's Himanshu. I'm a full stack developer base at Almora , Uttarakhand",
+    "I’m Himanshu Gunwant, a Software Engineer at Acefone.",
   description2:
-    "I am a student of BCA at Dev Bhoomi Uttarakhand University.I am really passionate about Competitive Programming and have a strong foundation in Mathematics and Logical Problem Solving. Currently I am working as a Full stack developer. I am also a team worker and inspire the team spirit of working together by motivating others to achieve the required goals on time. I'm an avid learner and is passionate for ambition and upcoming endeavors in the this technical career and life.",
+    "I am passionate about building scalable, user-centered applications. With experience in JavaScript, Node.js, React, and cloud-based solutions, I’m dedicated to creating high-quality software that addresses real-world needs. I enjoy tackling complex problems, staying up-to-date with the latest technology trends, and constantly pushing myself to improve. Outside of work, I love traveling, gaming, and exploring new experiences that help me grow both personally and professionally.",
   image: 2,
 };

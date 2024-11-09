@@ -2,75 +2,42 @@ import React from 'react'
 import Document, { Html, Main, NextScript, Head } from 'next/document'
 import { ServerStyleSheets } from '@material-ui/core/styles'
 
+const openGraphImage = '/images/profile-min.jpg'
+
 export default class MyDocument extends Document {
     render() {
         return (
             <Html lang="en">
-                <Html>
-                    <Head>
-                        <meta charSet="utf-8" />
-                        <link rel="icon" href="/favicon.png" />
-                        <meta name="theme-color" content="#000000" />
-                        <meta name="description" content="Portfolio Website" />
-                        <link rel="apple-touch-icon" href="/favicon.png" />
-                        <link rel="manifest" href="/manifest.json" />
+                <Head>
+                    <meta charSet="utf-8" />
+                    <link rel="icon" href="/favicon.png" />
+                    <meta name="theme-color" content="#000000" />
+                    <meta name="description" content="Himanshu Gunwant: Software Engineer at Acefone" />
+                    <link rel="apple-touch-icon" href="/favicon.png" />
+                    <link rel="manifest" href="/manifest.json" />
 
-                        <meta
-                            name="description"
-                            content="Himanshu Gunwant : Software Enigeer @ WebToNative"
-                        />
-                        <meta
-                            property="og:image"
-                            content="Developer Portfolio"
-                        />
-                        <meta
-                            property="og:site_name"
-                            content="Developer Portfolio"
-                        />
-                        <meta
-                            property="og:title"
-                            content="Developer Portfolio"
-                        />
-                        <meta
-                            property="og:url"
-                            content="https://profile-himanshu.vercel.app/"
-                        />
-                        <meta property="og:type" content="website" />
-                        <meta
-                            property="og:description"
-                            content="Himanshu Gunwant : Software Enigeer @ WebToNative"
-                        />
+                    {/* Open Graph Meta Tags */}
+                    <meta property="og:image" content={openGraphImage} />
+                    <meta property="og:site_name" content="Himanshu Gunwant's Portfolio" />
+                    <meta property="og:title" content="Himanshu Gunwant: Software Engineer" />
+                    <meta property="og:url" content="https://himanshu-gunwant.com/" />
+                    <meta property="og:type" content="website" />
+                    <meta property="og:description" content="Himanshu Gunwant: Software Engineer at Acefone. Check out my portfolio and projects." />
 
-                        <meta itemProp="name" content="Developer Portfolio" />
-                        <meta
-                            itemProp="url"
-                            content="https://profile-himanshu.vercel.app/"
-                        />
-                        <meta
-                            itemProp="description"
-                            content="Himanshu Gunwant : Software Enigeer @ WebToNative"
-                        />
-                        <meta itemProp="thumbnailUrl" content="" />
+                    {/* Schema.org Meta Tags */}
+                    <meta itemProp="name" content="Himanshu Gunwant's Portfolio" />
+                    <meta itemProp="url" content="https://himanshu-gunwant.com/" />
+                    <meta itemProp="description" content="Himanshu Gunwant: Software Engineer at Acefone." />
+                    <meta itemProp="image" content={openGraphImage} />
 
-                        <meta
-                            name="twitter:url"
-                            content="https://profile-himanshu.vercel.app/"
-                        />
-                        <meta
-                            name="twitter:title"
-                            content="Developer Portfolio"
-                        />
-                        <meta
-                            name="twitter:description"
-                            content="Himanshu Gunwant : Software Enigeer @ WebToNative"
-                        />
-                        <meta name="twitter:card" content="summary" />
-                    </Head>
-                    <body>
-                        <Main />
-                        <NextScript />
-                    </body>
-                </Html>
+                    {/* Twitter Card Meta Tags */}
+                    <meta name="twitter:card" content="summary_large_image" />
+                    <meta name="twitter:url" content="https://himanshu-gunwant.com/" />
+                    <meta name="twitter:title" content="Himanshu Gunwant: Software Engineer" />
+                    <meta name="twitter:description" content="Himanshu Gunwant: Software Engineer at Acefone. Check out my portfolio and projects." />
+                    <meta name="twitter:image" content={openGraphImage} />
+                </Head>
+
                 <body>
                     <Main />
                     <NextScript />
@@ -97,9 +64,6 @@ MyDocument.getInitialProps = async (ctx) => {
     return {
         ...initialProps,
         // Styles fragment is rendered after the app and page rendering finish.
-        styles: [
-            ...React.Children.toArray(initialProps.styles),
-            sheets.getStyleElement(),
-        ],
+        styles: [...React.Children.toArray(initialProps.styles), sheets.getStyleElement()],
     }
 }
