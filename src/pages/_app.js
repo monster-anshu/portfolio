@@ -32,7 +32,7 @@ const schema = {
     '@type': 'Person',
     name: 'Himanshu Gunwant',
     url: 'https://himanshu-gunwant.com',
-    image: 'https://raw.githubusercontent.com/monster-anshu/document/master/profile.jpg',
+    image: 'https://raw.githubusercontent.com/monster-anshu/document/master/profile.webp',
     sameAs: [
         'https://www.instagram.com/its_.anshu._',
         'https://www.linkedin.com/in/himanshu-gunwant',
@@ -44,7 +44,7 @@ const schema = {
         '@type': 'Organization',
         name: 'Acefone Software',
         url: 'https://acefone.com', // Adding the company website for more context
-        logo: 'https://acefone.com/logo.png', // Optional: Add a logo for the organization
+        logo: 'https://himanshu-gunwant.com/images/acefone/logo-label.png', // Optional: Add a logo for the organization
     },
     alumniOf: {
         '@type': 'CollegeOrUniversity',
