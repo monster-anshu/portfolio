@@ -2,8 +2,7 @@
 const nextConfig = {
     reactStrictMode: true,
     images: {
-        unoptimized : true,
-        domains: ['raw.githubusercontent.com'],
+        unoptimized: true,
     },
 }
 module.exports = nextConfig

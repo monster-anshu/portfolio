@@ -7,10 +7,7 @@ import Head from 'next/head'
 
 const MyApp = ({ Component, pageProps }) => {
     console.log('%cDEVELOPER PORTFOLIO', `color:red; font-size:50px`)
-    console.log(
-        '%chttps://github.com/hhhrrrttt222111/developer-portfolio',
-        `color:red; font-size:20px`,
-    )
+    console.log('%chttps://github.com/hhhrrrttt222111/developer-portfolio', `color:red; font-size:20px`)
 
     return (
         <ThemeContextProvider>

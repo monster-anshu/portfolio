@@ -7,6 +7,13 @@ const boy3 = '/assets/svg/testimonials/boy3.svg'
 
 export const testimonialsData = [
     {
+        id: 4,
+        name: 'Vikash Sharma',
+        title: 'CEO Orufy',
+        text: 'Himanshu has demonstrated excellent skills and qualities and has contributed positively to the company. We found Himanshu Gunwant to be a dedicated, reliable, and professional individual who was well-liked and respected by peers and management alike.',
+        image: '/images/vikash.png',
+    },
+    {
         id: 1,
         name: 'Aplesh Doshi',
         title: 'CEO Fintricity',

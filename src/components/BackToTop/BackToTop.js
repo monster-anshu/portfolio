@@ -4,54 +4,50 @@ import { makeStyles } from '@material-ui/core/styles'
 
 import { ThemeContext } from '../../contexts/ThemeContext'
 import styles from './BackToTop.module.css'
+import { theme } from '../../data/themeData'
+
+const useStyles = makeStyles(() => ({
+    icon: {
+        fontSize: '3rem',
+        color: theme.tertiary,
+    },
+}))
 
 function BackToTop() {
-  const [visible, setVisible] = useState(false)
+    const [visible, setVisible] = useState(false)
 
-  const { theme } = useContext(ThemeContext)
-
-  const toggleVisible = () => {
-    const scrolled = document.documentElement.scrollTop
-    if (scrolled > 300) {
-      setVisible(true)
-    } else if (scrolled <= 300) {
-      setVisible(false)
+    const toggleVisible = () => {
+        const scrolled = document.documentElement.scrollTop
+        if (scrolled > 300) {
+            setVisible(true)
+        } else if (scrolled <= 300) {
+            setVisible(false)
+        }
     }
-  }
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    })
-  }
-
-  useEffect(() => {
-    window.addEventListener('scroll', toggleVisible)
-    return () => {
-      window.removeEventListener('scroll', toggleVisible)
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        })
     }
-  }, [])
 
-  const useStyles = makeStyles(() => ({
-    icon: {
-      fontSize: '3rem',
-      color: theme.tertiary,
-    },
-  }))
+    useEffect(() => {
+        window.addEventListener('scroll', toggleVisible)
+        return () => {
+            window.removeEventListener('scroll', toggleVisible)
+        }
+    }, [])
 
-  const classes = useStyles()
+    const classes = useStyles()
 
-  return (
-    <div
-      style={{ display: visible ? 'inline' : 'none' }}
-      className={styles['backToTop']}
-    >
-      <button onClick={scrollToTop} aria-label="Back to top">
-        <IoIosArrowDropupCircle className={classes.icon} />
-      </button>
-    </div>
-  )
+    return (
+        <div style={{ display: visible ? 'inline' : 'none' }} className={styles['backToTop']}>
+            <button onClick={scrollToTop} aria-label="Back to top">
+                <IoIosArrowDropupCircle className={classes.icon} />
+            </button>
+        </div>
+    )
 }
 
 export default BackToTop

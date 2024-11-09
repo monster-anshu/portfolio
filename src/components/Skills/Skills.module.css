@@ -10,7 +10,7 @@
 .skillsHeader {
     display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
 }
 
 .skillsHeader h2 {
@@ -24,7 +24,7 @@
 .skillsContainer {
     display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
     width: 100%;
     margin-top: 3.5rem;
     padding: 0 2rem;
@@ -35,9 +35,8 @@
     margin: 0 2rem;
 }
 
-
 .skill--box {
-    background: #FAFAFA;
+    background: #fafafa;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.12);
     border-radius: 10px;
     width: 160px;
@@ -51,16 +50,14 @@
     transition: 300ms ease-in-out;
 }
 
-.skill--box:hover  {
+.skill--box:hover {
     transform: scale(1.15);
 }
-
 
 .skill--box > img {
     height: 50px;
     pointer-events: none;
 }
-
 
 .skill--box h3 {
     font-family: Big Shoulders Text;
@@ -71,11 +68,9 @@
     margin-top: 1rem;
 }
 
-
 .marquee {
     padding: 3rem 0;
 }
-
 
 @media (min-width: 992px) and (max-width: 1380px) {
     .skills {
@@ -86,7 +81,6 @@
         margin-top: 1.5rem;
     }
 }
-
 
 @media screen and (max-width: 992px) {
     .skills {
@@ -111,12 +105,10 @@
         height: 45px;
     }
 
-
     .skill--box h3 {
         font-size: 20px;
         margin-top: 1rem;
     }
-
 }
 
 @media screen and (max-width: 800px) {
@@ -159,15 +151,10 @@
 }
 
 @media screen and (max-width: 400px) {
-
-}
-  
-@media only screen and (min-device-width: 320px) and (max-device-width: 
-  480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2/3) {
-
 }
 
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2/3) {
+}
 
 @media only screen and (device-width: 768px) {
-
 }

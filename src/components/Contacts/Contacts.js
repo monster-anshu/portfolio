@@ -26,6 +26,87 @@ import { ThemeContext } from '../../contexts/ThemeContext'
 import { socialsData } from '../../data/socialsData'
 import { contactsData } from '../../data/contactsData'
 import styles from './Contacts.module.css'
+import { theme } from '../../data/themeData'
+
+const useStyles = makeStyles((t) => ({
+    input: {
+        border: `4px solid ${theme.primary80}`,
+        backgroundColor: `${theme.secondary}`,
+        color: `${theme.tertiary}`,
+        fontFamily: 'var(--primaryFont)',
+        fontWeight: 500,
+        transition: 'border 0.2s ease-in-out',
+        '&:focus': {
+            border: `4px solid ${theme.primary600}`,
+        },
+    },
+    message: {
+        border: `4px solid ${theme.primary80}`,
+        backgroundColor: `${theme.secondary}`,
+        color: `${theme.tertiary}`,
+        fontFamily: 'var(--primaryFont)',
+        fontWeight: 500,
+        transition: 'border 0.2s ease-in-out',
+        '&:focus': {
+            border: `4px solid ${theme.primary600}`,
+        },
+    },
+    label: {
+        backgroundColor: `${theme.secondary}`,
+        color: `${theme.primary}`,
+        fontFamily: 'var(--primaryFont)',
+        fontWeight: 600,
+        fontSize: '0.9rem',
+        padding: '0 5px',
+        transform: 'translate(25px,50%)',
+        display: 'inline-flex',
+    },
+    socialIcon: {
+        width: '45px',
+        height: '45px',
+        borderRadius: '50%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontSize: '21px',
+        backgroundColor: theme.primary,
+        color: theme.secondary,
+        transition: '250ms ease-in-out',
+        '&:hover': {
+            transform: 'scale(1.1)',
+            color: theme.secondary,
+            backgroundColor: theme.tertiary,
+        },
+    },
+    detailsIcon: {
+        backgroundColor: theme.primary,
+        color: theme.secondary,
+        borderRadius: '50%',
+        width: '45px',
+        height: '45px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontSize: '23px',
+        transition: '250ms ease-in-out',
+        flexShrink: 0,
+        '&:hover': {
+            transform: 'scale(1.1)',
+            color: theme.secondary,
+            backgroundColor: theme.tertiary,
+        },
+    },
+    submitBtn: {
+        backgroundColor: theme.primary,
+        color: theme.secondary,
+        transition: '250ms ease-in-out',
+        '&:hover': {
+            transform: 'scale(1.08)',
+            color: theme.secondary,
+            backgroundColor: theme.tertiary,
+        },
+    },
+}))
 
 function Contacts() {
     const [open, setOpen] = useState(false)
@@ -46,86 +127,6 @@ function Contacts() {
 
         setOpen(false)
     }
-
-    const useStyles = makeStyles((t) => ({
-        input: {
-            border: `4px solid ${theme.primary80}`,
-            backgroundColor: `${theme.secondary}`,
-            color: `${theme.tertiary}`,
-            fontFamily: 'var(--primaryFont)',
-            fontWeight: 500,
-            transition: 'border 0.2s ease-in-out',
-            '&:focus': {
-                border: `4px solid ${theme.primary600}`,
-            },
-        },
-        message: {
-            border: `4px solid ${theme.primary80}`,
-            backgroundColor: `${theme.secondary}`,
-            color: `${theme.tertiary}`,
-            fontFamily: 'var(--primaryFont)',
-            fontWeight: 500,
-            transition: 'border 0.2s ease-in-out',
-            '&:focus': {
-                border: `4px solid ${theme.primary600}`,
-            },
-        },
-        label: {
-            backgroundColor: `${theme.secondary}`,
-            color: `${theme.primary}`,
-            fontFamily: 'var(--primaryFont)',
-            fontWeight: 600,
-            fontSize: '0.9rem',
-            padding: '0 5px',
-            transform: 'translate(25px,50%)',
-            display: 'inline-flex',
-        },
-        socialIcon: {
-            width: '45px',
-            height: '45px',
-            borderRadius: '50%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '21px',
-            backgroundColor: theme.primary,
-            color: theme.secondary,
-            transition: '250ms ease-in-out',
-            '&:hover': {
-                transform: 'scale(1.1)',
-                color: theme.secondary,
-                backgroundColor: theme.tertiary,
-            },
-        },
-        detailsIcon: {
-            backgroundColor: theme.primary,
-            color: theme.secondary,
-            borderRadius: '50%',
-            width: '45px',
-            height: '45px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            fontSize: '23px',
-            transition: '250ms ease-in-out',
-            flexShrink: 0,
-            '&:hover': {
-                transform: 'scale(1.1)',
-                color: theme.secondary,
-                backgroundColor: theme.tertiary,
-            },
-        },
-        submitBtn: {
-            backgroundColor: theme.primary,
-            color: theme.secondary,
-            transition: '250ms ease-in-out',
-            '&:hover': {
-                transform: 'scale(1.08)',
-                color: theme.secondary,
-                backgroundColor: theme.tertiary,
-            },
-        },
-    }))
 
     const classes = useStyles()
 
@@ -165,11 +166,7 @@ function Contacts() {
     }
 
     return (
-        <div
-            className={styles['contacts']}
-            id="contacts"
-            style={{ backgroundColor: theme.secondary }}
-        >
+        <div className={styles['contacts']} id="contacts" style={{ backgroundColor: theme.secondary }}>
             <div className={styles['contacts--container']}>
                 <h1 style={{ color: theme.primary }}>Contacts</h1>
                 <div className={styles['contacts-body']}>
@@ -189,10 +186,7 @@ function Contacts() {
                                 />
                             </div>
                             <div className={styles['input-container']}>
-                                <label
-                                    htmlFor="Email"
-                                    className={classes.label}
-                                >
+                                <label htmlFor="Email" className={classes.label}>
                                     Email
                                 </label>
                                 <input
@@ -205,10 +199,7 @@ function Contacts() {
                                 />
                             </div>
                             <div className={styles['input-container']}>
-                                <label
-                                    htmlFor="Message"
-                                    className={classes.label}
-                                >
+                                <label htmlFor="Message" className={classes.label}>
                                     Message
                                 </label>
                                 <textarea
@@ -222,30 +213,20 @@ function Contacts() {
                             </div>
 
                             <div className={styles['submit-btn']}>
-                                <button
-                                    type="submit"
-                                    className={classes.submitBtn}
-                                    disabled={success}
-                                >
+                                <button type="submit" className={classes.submitBtn} disabled={success}>
                                     <p>{!success ? 'Send' : 'Sent'}</p>
                                     <div className={styles['submit-icon']}>
                                         <AiOutlineSend
                                             className={styles['send-icon']}
                                             style={{
-                                                animation: !success
-                                                    ? 'initial'
-                                                    : 'fly 0.8s linear both',
-                                                display: !success
-                                                    ? 'inline-flex'
-                                                    : 'none',
+                                                animation: !success ? 'initial' : 'fly 0.8s linear both',
+                                                display: !success ? 'inline-flex' : 'none',
                                             }}
                                         />
                                         <AiOutlineCheckCircle
                                             className={styles['success-icon']}
                                             style={{
-                                                display: !success
-                                                    ? 'none'
-                                                    : 'inline-flex',
+                                                display: !success ? 'none' : 'inline-flex',
                                                 opacity: !success ? '0' : '1',
                                             }}
                                         />
@@ -265,12 +246,7 @@ function Contacts() {
                             <SnackbarContent
                                 action={
                                     <React.Fragment>
-                                        <IconButton
-                                            size="small"
-                                            aria-label="close"
-                                            color="inherit"
-                                            onClick={handleClose}
-                                        >
+                                        <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>
                                             <CloseIcon fontSize="small" />
                                         </IconButton>
                                     </React.Fragment>
@@ -286,145 +262,78 @@ function Contacts() {
                     </div>
 
                     <div className={styles['contacts-details']}>
-                        <a
-                            href={`mailto:${contactsData.email}`}
-                            className={styles['personal-details']}
-                        >
+                        <a href={`mailto:${contactsData.email}`} className={styles['personal-details']}>
                             <div className={classes.detailsIcon}>
                                 <FiAtSign />
                             </div>
-                            <p style={{ color: theme.tertiary }}>
-                                {contactsData.email}
-                            </p>
+                            <p style={{ color: theme.tertiary }}>{contactsData.email}</p>
                         </a>
-                        <a
-                            href={`tel:${contactsData.phone}`}
-                            className={styles['personal-details']}
-                        >
+                        <a href={`tel:${contactsData.phone}`} className={styles['personal-details']}>
                             <div className={classes.detailsIcon}>
                                 <FiPhone />
                             </div>
-                            <p style={{ color: theme.tertiary }}>
-                                {contactsData.phone}
-                            </p>
+                            <p style={{ color: theme.tertiary }}>{contactsData.phone}</p>
                         </a>
                         <div className={styles['personal-details']}>
                             <div className={classes.detailsIcon}>
                                 <HiOutlineLocationMarker />
                             </div>
-                            <p style={{ color: theme.tertiary }}>
-                                {contactsData.address}
-                            </p>
+                            <p style={{ color: theme.tertiary }}>{contactsData.address}</p>
                         </div>
 
                         <div className={styles['socialmedia-icons']}>
                             {socialsData.twitter && (
-                                <a
-                                    href={socialsData.twitter}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className={classes.socialIcon}
-                                >
+                                <a href={socialsData.twitter} target="_blank" rel="noreferrer" className={classes.socialIcon}>
                                     <FaTwitter aria-label="Twitter" />
                                 </a>
                             )}
                             {socialsData.github && (
-                                <a
-                                    href={socialsData.github}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className={classes.socialIcon}
-                                >
+                                <a href={socialsData.github} target="_blank" rel="noreferrer" className={classes.socialIcon}>
                                     <FaGithub aria-label="GitHub" />
                                 </a>
                             )}
                             {socialsData.linkedIn && (
-                                <a
-                                    href={socialsData.linkedIn}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className={classes.socialIcon}
-                                >
+                                <a href={socialsData.linkedIn} target="_blank" rel="noreferrer" className={classes.socialIcon}>
                                     <FaLinkedinIn aria-label="LinkedIn" />
                                 </a>
                             )}
                             {socialsData.instagram && (
-                                <a
-                                    href={socialsData.instagram}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className={classes.socialIcon}
-                                >
+                                <a href={socialsData.instagram} target="_blank" rel="noreferrer" className={classes.socialIcon}>
                                     <FaInstagram aria-label="Instagram" />
                                 </a>
                             )}
                             {socialsData.medium && (
-                                <a
-                                    href={socialsData.medium}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className={classes.socialIcon}
-                                >
+                                <a href={socialsData.medium} target="_blank" rel="noreferrer" className={classes.socialIcon}>
                                     <FaMediumM aria-label="Medium" />
                                 </a>
                             )}
                             {socialsData.blogger && (
-                                <a
-                                    href={socialsData.blogger}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className={classes.socialIcon}
-                                >
+                                <a href={socialsData.blogger} target="_blank" rel="noreferrer" className={classes.socialIcon}>
                                     <FaBloggerB aria-label="Blogger" />
                                 </a>
                             )}
                             {socialsData.youtube && (
-                                <a
-                                    href={socialsData.youtube}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className={classes.socialIcon}
-                                >
+                                <a href={socialsData.youtube} target="_blank" rel="noreferrer" className={classes.socialIcon}>
                                     <FaYoutube aria-label="YouTube" />
                                 </a>
                             )}
                             {socialsData.reddit && (
-                                <a
-                                    href={socialsData.reddit}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className={classes.socialIcon}
-                                >
+                                <a href={socialsData.reddit} target="_blank" rel="noreferrer" className={classes.socialIcon}>
                                     <FaRedditAlien aria-label="Reddit" />
                                 </a>
                             )}
                             {socialsData.stackOverflow && (
-                                <a
-                                    href={socialsData.stackOverflow}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className={classes.socialIcon}
-                                >
+                                <a href={socialsData.stackOverflow} target="_blank" rel="noreferrer" className={classes.socialIcon}>
                                     <FaStackOverflow aria-label="Stack Overflow" />
                                 </a>
                             )}
                             {socialsData.codepen && (
-                                <a
-                                    href={socialsData.codepen}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className={classes.socialIcon}
-                                >
+                                <a href={socialsData.codepen} target="_blank" rel="noreferrer" className={classes.socialIcon}>
                                     <FaCodepen aria-label="CodePen" />
                                 </a>
                             )}
                             {socialsData.gitlab && (
-                                <a
-                                    href={socialsData.gitlab}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className={classes.socialIcon}
-                                >
+                                <a href={socialsData.gitlab} target="_blank" rel="noreferrer" className={classes.socialIcon}>
                                     <FaGitlab aria-label="GitLab" />
                                 </a>
                             )}
@@ -432,11 +341,7 @@ function Contacts() {
                     </div>
                 </div>
             </div>
-            <img
-                src={theme.contactsimg}
-                alt="contacts"
-                className={styles['contacts--img']}
-            />
+            <img src={theme.contactsimg} alt="contacts" className={styles['contacts--img']} />
         </div>
     )
 }

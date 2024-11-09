@@ -10,11 +10,7 @@ import styles from './Experience.module.css'
 function Experience() {
     const { theme } = useContext(ThemeContext)
     return (
-        <div
-            className={styles['experience']}
-            id="experience"
-            style={{ backgroundColor: theme.secondary }}
-        >
+        <div className={styles['experience']} id="experience" style={{ backgroundColor: theme.secondary }}>
             <div className={styles['experience-body']}>
                 <div className={styles['experience-image']}>
                     <img src={theme.expimg} alt="" />

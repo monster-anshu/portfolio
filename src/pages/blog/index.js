@@ -10,6 +10,53 @@ import { blogData } from '../../data/blogData'
 import { headerData } from '../../data/headerData'
 import styles from './BlogPage.module.css'
 import Head from 'next/head'
+import { theme } from '../../data/themeData'
+
+const useStyles = makeStyles((t) => ({
+    search: {
+        color: theme.tertiary,
+        width: '40%',
+        height: '2.75rem',
+        outline: 'none',
+        border: 'none',
+        borderRadius: '20px',
+        padding: '0.95rem 1rem',
+        fontFamily: "'Noto Sans TC', sans-serif",
+        fontWeight: 500,
+        fontSize: '0.9rem',
+        backgroundColor: theme.secondary,
+        boxShadow:
+            theme.type === 'dark'
+                ? 'inset 3px 3px 6px #ffffff10, inset -3px -3px 6px #00000060'
+                : 'inset 3px 3px 6px #ffffffbd, inset -3px -3px 6px #00000030',
+        '&::placeholder': {
+            color: theme.tertiary80,
+        },
+        [t.breakpoints.down('sm')]: {
+            width: '350px',
+        },
+    },
+    home: {
+        color: theme.secondary,
+        position: 'absolute',
+        top: 25,
+        left: 25,
+        padding: '7px',
+        borderRadius: '50%',
+        boxSizing: 'content-box',
+        fontSize: '2rem',
+        cursor: 'pointer',
+        boxShadow: theme.type === 'dark' ? '3px 3px 6px #ffffff40, -3px -3px 6px #00000050' : '3px 3px 6px #ffffff40, -3px -3px 6px #00000050',
+        transition: 'all 0.3s ease-in-out',
+        '&:hover': {
+            color: theme.tertiary,
+            transform: 'scale(1.1)',
+        },
+        [t.breakpoints.down('sm')]: {
+            fontSize: '1.8rem',
+        },
+    },
+}))
 
 function BlogPage() {
     const [search, setSearch] = useState('')
@@ -20,69 +67,14 @@ function BlogPage() {
         return content.toLowerCase().includes(search.toLowerCase())
     })
 
-    const useStyles = makeStyles((t) => ({
-        search: {
-            color: theme.tertiary,
-            width: '40%',
-            height: '2.75rem',
-            outline: 'none',
-            border: 'none',
-            borderRadius: '20px',
-            padding: '0.95rem 1rem',
-            fontFamily: "'Noto Sans TC', sans-serif",
-            fontWeight: 500,
-            fontSize: '0.9rem',
-            backgroundColor: theme.secondary,
-            boxShadow:
-                theme.type === 'dark'
-                    ? 'inset 3px 3px 6px #ffffff10, inset -3px -3px 6px #00000060'
-                    : 'inset 3px 3px 6px #ffffffbd, inset -3px -3px 6px #00000030',
-            '&::placeholder': {
-                color: theme.tertiary80,
-            },
-            [t.breakpoints.down('sm')]: {
-                width: '350px',
-            },
-        },
-        home: {
-            color: theme.secondary,
-            position: 'absolute',
-            top: 25,
-            left: 25,
-            padding: '7px',
-            borderRadius: '50%',
-            boxSizing: 'content-box',
-            fontSize: '2rem',
-            cursor: 'pointer',
-            boxShadow:
-                theme.type === 'dark'
-                    ? '3px 3px 6px #ffffff40, -3px -3px 6px #00000050'
-                    : '3px 3px 6px #ffffff40, -3px -3px 6px #00000050',
-            transition: 'all 0.3s ease-in-out',
-            '&:hover': {
-                color: theme.tertiary,
-                transform: 'scale(1.1)',
-            },
-            [t.breakpoints.down('sm')]: {
-                fontSize: '1.8rem',
-            },
-        },
-    }))
-
     const classes = useStyles()
 
     return (
-        <div
-            className={styles['blogPage']}
-            style={{ backgroundColor: theme.secondary }}
-        >
+        <div className={styles['blogPage']} style={{ backgroundColor: theme.secondary }}>
             <Head>
                 <title>{headerData.name} | Blog</title>
             </Head>
-            <div
-                className={styles['blogPage--header']}
-                style={{ backgroundColor: theme.primary }}
-            >
+            <div className={styles['blogPage--header']} style={{ backgroundColor: theme.primary }}>
                 <Link href="/">
                     <AiOutlineHome className={classes.home} />
                 </Link>
@@ -99,13 +91,7 @@ function BlogPage() {
                     />
                 </div>
                 <div className={styles['blogs--container']}>
-                    <Grid
-                        className={styles['blog-grid']}
-                        container
-                        direction="row"
-                        alignItems="center"
-                        justifyContent="center"
-                    >
+                    <Grid className={styles['blog-grid']} container direction="row" alignItems="center" justifyContent="center">
                         {filteredArticles.reverse().map((blog) => (
                             <SingleBlog
                                 theme={theme}

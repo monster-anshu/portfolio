@@ -4,91 +4,61 @@ import { FaPlay, FaCode } from 'react-icons/fa'
 import Fade from 'react-reveal/Fade'
 
 import styles from './SingleProject.module.css'
+import { theme } from '../../../data/themeData'
 
+const useStyles = makeStyles((t) => ({
+    iconBtn: {
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: 40,
+        height: 40,
+        borderRadius: 50,
+        border: `2px solid ${theme.tertiary}`,
+        color: theme.tertiary,
+        transition: 'all 0.2s',
+        '&:hover': {
+            backgroundColor: theme.secondary,
+            color: theme.primary,
+            transform: 'scale(1.1)',
+            border: `2px solid ${theme.secondary}`,
+        },
+    },
+    icon: {
+        fontSize: '1.1rem',
+        transition: 'all 0.2s',
+        '&:hover': {},
+    },
+}))
 function SingleProject({ id, name, desc, tags, code, demo, image, theme }) {
-    const useStyles = makeStyles((t) => ({
-        iconBtn: {
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: 40,
-            height: 40,
-            borderRadius: 50,
-            border: `2px solid ${theme.tertiary}`,
-            color: theme.tertiary,
-            transition: 'all 0.2s',
-            '&:hover': {
-                backgroundColor: theme.secondary,
-                color: theme.primary,
-                transform: 'scale(1.1)',
-                border: `2px solid ${theme.secondary}`,
-            },
-        },
-        icon: {
-            fontSize: '1.1rem',
-            transition: 'all 0.2s',
-            '&:hover': {},
-        },
-    }))
-
     const classes = useStyles()
 
     return (
         <Fade bottom>
-            <div
-                key={id}
-                className={styles['singleProject']}
-                style={{ backgroundColor: theme.primary400 }}
-            >
+            <div key={id} className={styles['singleProject']} style={{ backgroundColor: theme.primary400 }}>
                 <div className={styles['projectContent']}>
-                    <h2
-                        id={name.replace(' ', '-').toLowerCase()}
-                        style={{ color: theme.tertiary }}
-                    >
+                    <h2 id={name.replace(' ', '-').toLowerCase()} style={{ color: theme.tertiary }}>
                         {name}
                     </h2>
-                    <img
-                        src={image ? image : '/assets/png/placeholder.png'}
-                        alt={name}
-                    />
+                    <img src={image ? image : '/assets/png/placeholder.png'} alt={name} />
                     <div className={styles['project--showcaseBtn']}>
                         <a
                             href={demo}
                             target="_blank"
                             rel="noreferrer"
                             className={classes.iconBtn}
-                            aria-labelledby={`${name
-                                .replace(' ', '-')
-                                .toLowerCase()} ${name
-                                .replace(' ', '-')
-                                .toLowerCase()}-demo`}
+                            aria-labelledby={`${name.replace(' ', '-').toLowerCase()} ${name.replace(' ', '-').toLowerCase()}-demo`}
                         >
-                            <FaPlay
-                                id={`${name
-                                    .replace(' ', '-')
-                                    .toLowerCase()}-demo`}
-                                className={classes.icon}
-                                aria-label="Demo"
-                            />
+                            <FaPlay id={`${name.replace(' ', '-').toLowerCase()}-demo`} className={classes.icon} aria-label="Demo" />
                         </a>
                         <a
                             href={code}
                             target="_blank"
                             rel="noreferrer"
                             className={classes.iconBtn}
-                            aria-labelledby={`${name
-                                .replace(' ', '-')
-                                .toLowerCase()} ${name
-                                .replace(' ', '-')
-                                .toLowerCase()}-code`}
+                            aria-labelledby={`${name.replace(' ', '-').toLowerCase()} ${name.replace(' ', '-').toLowerCase()}-code`}
                         >
-                            <FaCode
-                                id={`${name
-                                    .replace(' ', '-')
-                                    .toLowerCase()}-code`}
-                                className={classes.icon}
-                                aria-label="Code"
-                            />
+                            <FaCode id={`${name.replace(' ', '-').toLowerCase()}-code`} className={classes.icon} aria-label="Code" />
                         </a>
                     </div>
                 </div>

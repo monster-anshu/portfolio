@@ -9,8 +9,8 @@
 @font-face {
     font-family: 'BestermindRegular';
     src: url('/assets/fonts/Bestermind/BestermindRegular.ttf');
-    src: url('/assets/fonts/Bestermind/BestermindRegular.ttf')
-            format('embedded-opentype'),
+    src:
+        url('/assets/fonts/Bestermind/BestermindRegular.ttf') format('embedded-opentype'),
         url('/assets/fonts/Bestermind/BestermindRegular.ttf') format('truetype');
 }
 

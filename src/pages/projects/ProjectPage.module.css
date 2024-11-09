@@ -43,11 +43,10 @@
 
 .project-grid {
     display: flex;
-    gap: 4rem; 
+    gap: 4rem;
 }
 
 @media (min-width: 992px) and (max-width: 1380px) {
-
 }
 
 @media screen and (max-width: 992px) {

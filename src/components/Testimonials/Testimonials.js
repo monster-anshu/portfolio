@@ -40,57 +40,29 @@ function Testimonials() {
     return (
         <>
             {testimonialsData.length > 0 && (
-                <div
-                    className={styles['testimonials']}
-                    style={{ backgroundColor: theme.primary }}
-                    id="testimonials"
-                >
+                <div className={styles['testimonials']} style={{ backgroundColor: theme.primary }} id="testimonials">
                     <div className={styles['testimonials--header']}>
                         <h1 style={{ color: theme.secondary }}>Testimonials</h1>
                     </div>
                     <div className={styles['testimonials--body']}>
-                        <FaQuoteLeft
-                            className={styles['quote']}
-                            style={{ color: theme.secondary }}
-                        />
-                        <div
-                            className={styles['testimonials--slider']}
-                            style={{ backgroundColor: theme.primary }}
-                        >
+                        <FaQuoteLeft className={styles['quote']} style={{ color: theme.secondary }} />
+                        <div className={styles['testimonials--slider']} style={{ backgroundColor: theme.primary }}>
                             <Slider {...settings} ref={sliderRef}>
                                 {testimonialsData.map((test) => (
-                                    <div
-                                        className={styles['single--testimony']}
-                                        key={test.id}
-                                    >
-                                        <div
-                                            className={
-                                                styles[
-                                                    'testimonials--container'
-                                                ]
-                                            }
-                                        >
+                                    <div className={styles['single--testimony']} key={test.id}>
+                                        <div className={styles['testimonials--container']}>
                                             <div
-                                                className={
-                                                    styles['review--img']
-                                                }
+                                                className={styles['review--img']}
                                                 style={{
-                                                    backgroundColor:
-                                                        theme.secondary,
+                                                    backgroundColor: theme.secondary,
                                                 }}
                                             >
-                                                <img
-                                                    src={test.image}
-                                                    alt={test.name}
-                                                />
+                                                <img src={test.image} alt={test.name} />
                                             </div>
                                             <div
-                                                className={
-                                                    styles['review--content']
-                                                }
+                                                className={styles['review--content']}
                                                 style={{
-                                                    backgroundColor:
-                                                        theme.secondary,
+                                                    backgroundColor: theme.secondary,
                                                     color: theme.tertiary,
                                                 }}
                                             >
@@ -102,25 +74,11 @@ function Testimonials() {
                                     </div>
                                 ))}
                             </Slider>
-                            <button
-                                className={styles['prevBtn']}
-                                onClick={gotoPrev}
-                                style={{ backgroundColor: theme.secondary }}
-                            >
-                                <FaArrowLeft
-                                    style={{ color: theme.primary }}
-                                    aria-label="Previous testimonial"
-                                />
+                            <button className={styles['prevBtn']} onClick={gotoPrev} style={{ backgroundColor: theme.secondary }}>
+                                <FaArrowLeft style={{ color: theme.primary }} aria-label="Previous testimonial" />
                             </button>
-                            <button
-                                className={styles['nextBtn']}
-                                onClick={gotoNext}
-                                style={{ backgroundColor: theme.secondary }}
-                            >
-                                <FaArrowRight
-                                    style={{ color: theme.primary }}
-                                    aria-label="Next testimonial"
-                                />
+                            <button className={styles['nextBtn']} onClick={gotoNext} style={{ backgroundColor: theme.secondary }}>
+                                <FaArrowRight style={{ color: theme.primary }} aria-label="Next testimonial" />
                             </button>
                         </div>
                     </div>

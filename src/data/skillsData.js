@@ -20,6 +20,10 @@ export const skillsData = [
     'Java',
     'GCP',
     'Git',
+    'Strapi',
+    'NestJS',
+    'PHP',
+    'Kafka',
 ]
 
 // Choose your skills from below. Make sure it's in the same format and spelled correctly.

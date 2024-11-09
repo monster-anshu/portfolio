@@ -7,24 +7,11 @@ import styles from './About.module.css'
 function About() {
     const { theme } = useContext(ThemeContext)
     return (
-        <div
-            className={styles['about']}
-            id="about"
-            style={{ backgroundColor: theme.secondary }}
-        >
+        <div className={styles['about']} id="about" style={{ backgroundColor: theme.secondary }}>
             <div className={styles['line-styling']}>
-                <div
-                    className={styles['style-circle']}
-                    style={{ backgroundColor: theme.primary }}
-                ></div>
-                <div
-                    className={styles['style-circle']}
-                    style={{ backgroundColor: theme.primary }}
-                ></div>
-                <div
-                    className={styles['style-line']}
-                    style={{ backgroundColor: theme.primary }}
-                ></div>
+                <div className={styles['style-circle']} style={{ backgroundColor: theme.primary }}></div>
+                <div className={styles['style-circle']} style={{ backgroundColor: theme.primary }}></div>
+                <div className={styles['style-line']} style={{ backgroundColor: theme.primary }}></div>
             </div>
             <div className={styles['about-body']}>
                 <div className={styles['about-description']}>
@@ -37,14 +24,7 @@ function About() {
                     </p>
                 </div>
                 <div className={styles['about-img']}>
-                    <img
-                        src={
-                            aboutData.image === 1
-                                ? theme.aboutimg1
-                                : theme.aboutimg2
-                        }
-                        alt=""
-                    />
+                    <img src={aboutData.image === 1 ? theme.aboutimg1 : theme.aboutimg2} alt="" />
                 </div>
             </div>
         </div>

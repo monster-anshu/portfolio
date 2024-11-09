@@ -10,11 +10,7 @@ import styles from './Education.module.css'
 function Education() {
     const { theme } = useContext(ThemeContext)
     return (
-        <div
-            className={styles['education']}
-            id="resume"
-            style={{ backgroundColor: theme.secondary }}
-        >
+        <div className={styles['education']} id="resume" style={{ backgroundColor: theme.secondary }}>
             <div className={styles['education-body']}>
                 <div className={styles['education-description']}>
                     <h1 style={{ color: theme.primary }}>Education</h1>

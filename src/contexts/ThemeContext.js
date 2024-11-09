@@ -10,18 +10,11 @@ function ThemeContextProvider(props) {
     const [drawerOpen, setDrawerOpen] = useState(false)
 
     const setHandleDrawer = () => {
-        setDrawerOpen(!drawerOpen)
+        setDrawerOpen((curr) => !curr)
     }
 
-
-
     const value = { theme, drawerOpen, setHandleDrawer }
-    return (
-        <ThemeContext.Provider value={value}>
-            {props.children}
-        </ThemeContext.Provider>
-    )
+    return <ThemeContext.Provider value={value}>{props.children}</ThemeContext.Provider>
 }
-
 
 export default ThemeContextProvider

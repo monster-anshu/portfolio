@@ -46,7 +46,6 @@
     flex-wrap: wrap;
 }
 
-
 @media (min-width: 992px) and (max-width: 1380px) {
     .services {
         padding: 2.7rem;
@@ -55,7 +54,6 @@
         width: 70%;
     }
 }
-
 
 @media screen and (max-width: 992px) {
     .services {
@@ -102,7 +100,7 @@
         font-size: 2.5rem;
         margin-bottom: 20px;
     }
-    .services-body p{
+    .services-body p {
         width: 80%;
     }
     .services-bodycontainer {
@@ -111,15 +109,10 @@
 }
 
 @media screen and (max-width: 400px) {
-
-}
-  
-@media only screen and (min-device-width: 320px) and (max-device-width: 
-  480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2/3) {
-
 }
 
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2/3) {
+}
 
 @media only screen and (device-width: 768px) {
-
 }

@@ -15,34 +15,17 @@ function Skills() {
     }
 
     return (
-        <div
-            className={styles['skills']}
-            style={{ backgroundColor: theme.secondary }}
-        >
+        <div className={styles['skills']} style={{ backgroundColor: theme.secondary }}>
             <div className={styles['skillsHeader']}>
                 <h2 style={{ color: theme.primary }}>Skills</h2>
             </div>
             <div className={styles['skillsContainer']}>
                 <div className={styles['skill--scroll']}>
-                    <Marquee
-                        gradient={false}
-                        speed={80}
-                        pauseOnHover={true}
-                        pauseOnClick={true}
-                        delay={0}
-                        play={true}
-                        direction="left"
-                    >
+                    <Marquee gradient={false} speed={100} pauseOnHover={true} pauseOnClick={true} delay={0} play={true} direction="left">
                         {skillsData.map((skill, id) => (
-                            <div
-                                className={styles['skill--box']}
-                                key={id}
-                                style={skillBoxStyle}
-                            >
+                            <div className={styles['skill--box']} key={id} style={skillBoxStyle}>
                                 <img src={skillsImage(skill)} alt={skill} />
-                                <h3 style={{ color: theme.tertiary }}>
-                                    {skill}
-                                </h3>
+                                <h3 style={{ color: theme.tertiary }}>{skill}</h3>
                             </div>
                         ))}
                     </Marquee>

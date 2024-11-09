@@ -10,16 +10,10 @@ function Achievement() {
     return (
         <>
             {achievementData.achievements.length > 0 && (
-                <div
-                    className={styles['achievement']}
-                    id="achievement"
-                    style={{ backgroundColor: theme.secondary }}
-                >
+                <div className={styles['achievement']} id="achievement" style={{ backgroundColor: theme.secondary }}>
                     <div className={styles['achievement-body']}>
                         <h1 style={{ color: theme.primary }}>Achievements</h1>
-                        <h4 style={{ color: theme.tertiary }}>
-                            {achievementData.bio}
-                        </h4>
+                        <h4 style={{ color: theme.tertiary }}>{achievementData.bio}</h4>
                     </div>
                     <div className={styles['achievement-cards']}>
                         {achievementData.achievements.map((achieve) => (

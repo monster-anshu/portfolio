@@ -13,9 +13,103 @@ import CloseIcon from '@material-ui/icons/Close'
 import { headerData } from '../../data/headerData'
 import { ThemeContext } from '../../contexts/ThemeContext'
 import styles from './Navbar.module.css'
+import { themeData } from '../../data/themeData'
+
+const theme = themeData.theme
+
+const useStyles = makeStyles((t) => ({
+    navMenu: {
+        fontSize: '2.5rem',
+        color: theme.tertiary,
+        cursor: 'pointer',
+        transform: 'translateY(-10px)',
+        transition: 'color 0.3s',
+        '&:hover': {
+            color: theme.primary,
+        },
+        [t.breakpoints.down('sm')]: {
+            fontSize: '2.5rem',
+        },
+        [t.breakpoints.down('xs')]: {
+            fontSize: '2rem',
+        },
+    },
+    MuiDrawer: {
+        padding: '0em 1.8em',
+        width: '14em',
+        fontFamily: ' var(--primaryFont)',
+        fontStyle: ' normal',
+        fontWeight: ' normal',
+        fontSize: ' 24px',
+        background: theme.secondary,
+        overflow: 'hidden',
+        borderTopRightRadius: '40px',
+        borderBottomRightRadius: '40px',
+        [t.breakpoints.down('sm')]: {
+            width: '12em',
+        },
+    },
+    closebtnIcon: {
+        fontSize: '2rem',
+        fontWeight: 'bold',
+        cursor: 'pointer',
+        color: theme.primary,
+        position: 'absolute',
+        right: 40,
+        top: 40,
+        transition: 'color 0.2s',
+        '&:hover': {
+            color: theme.tertiary,
+        },
+        [t.breakpoints.down('sm')]: {
+            right: 20,
+            top: 20,
+        },
+    },
+    drawerItem: {
+        margin: '2rem auto',
+        borderRadius: '78.8418px',
+        background: theme.secondary,
+        color: theme.primary,
+        width: '85%',
+        height: '60px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-evenly',
+        padding: '0 30px',
+        boxSizing: 'border-box',
+        border: '2px solid',
+        borderColor: theme.primary,
+        transition: 'background-color 0.2s, color 0.2s',
+        '&:hover': {
+            background: theme.primary,
+            color: theme.secondary,
+        },
+        [t.breakpoints.down('sm')]: {
+            width: '100%',
+            padding: '0 25px',
+            height: '55px',
+        },
+    },
+    drawerLinks: {
+        fontFamily: 'var(--primaryFont)',
+        width: '50%',
+        fontSize: '1.3rem',
+        fontWeight: 600,
+        [t.breakpoints.down('sm')]: {
+            fontSize: '1.125rem',
+        },
+    },
+    drawerIcon: {
+        fontSize: '1.6rem',
+        [t.breakpoints.down('sm')]: {
+            fontSize: '1.385rem',
+        },
+    },
+}))
 
 function Navbar() {
-    const { theme, setHandleDrawer } = useContext(ThemeContext)
+    const { setHandleDrawer } = useContext(ThemeContext)
 
     const [open, setOpen] = useState(false)
 
@@ -28,97 +122,6 @@ function Navbar() {
         setOpen(false)
         setHandleDrawer()
     }
-
-    const useStyles = makeStyles((t) => ({
-        navMenu: {
-            fontSize: '2.5rem',
-            color: theme.tertiary,
-            cursor: 'pointer',
-            transform: 'translateY(-10px)',
-            transition: 'color 0.3s',
-            '&:hover': {
-                color: theme.primary,
-            },
-            [t.breakpoints.down('sm')]: {
-                fontSize: '2.5rem',
-            },
-            [t.breakpoints.down('xs')]: {
-                fontSize: '2rem',
-            },
-        },
-        MuiDrawer: {
-            padding: '0em 1.8em',
-            width: '14em',
-            fontFamily: ' var(--primaryFont)',
-            fontStyle: ' normal',
-            fontWeight: ' normal',
-            fontSize: ' 24px',
-            background: theme.secondary,
-            overflow: 'hidden',
-            borderTopRightRadius: '40px',
-            borderBottomRightRadius: '40px',
-            [t.breakpoints.down('sm')]: {
-                width: '12em',
-            },
-        },
-        closebtnIcon: {
-            fontSize: '2rem',
-            fontWeight: 'bold',
-            cursor: 'pointer',
-            color: theme.primary,
-            position: 'absolute',
-            right: 40,
-            top: 40,
-            transition: 'color 0.2s',
-            '&:hover': {
-                color: theme.tertiary,
-            },
-            [t.breakpoints.down('sm')]: {
-                right: 20,
-                top: 20,
-            },
-        },
-        drawerItem: {
-            margin: '2rem auto',
-            borderRadius: '78.8418px',
-            background: theme.secondary,
-            color: theme.primary,
-            width: '85%',
-            height: '60px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-evenly',
-            padding: '0 30px',
-            boxSizing: 'border-box',
-            border: '2px solid',
-            borderColor: theme.primary,
-            transition: 'background-color 0.2s, color 0.2s',
-            '&:hover': {
-                background: theme.primary,
-                color: theme.secondary,
-            },
-            [t.breakpoints.down('sm')]: {
-                width: '100%',
-                padding: '0 25px',
-                height: '55px',
-            },
-        },
-        drawerLinks: {
-            fontFamily: 'var(--primaryFont)',
-            width: '50%',
-            fontSize: '1.3rem',
-            fontWeight: 600,
-            [t.breakpoints.down('sm')]: {
-                fontSize: '1.125rem',
-            },
-        },
-        drawerIcon: {
-            fontSize: '1.6rem',
-            [t.breakpoints.down('sm')]: {
-                fontSize: '1.385rem',
-            },
-        },
-    }))
 
     const classes = useStyles()
 
@@ -133,15 +136,9 @@ function Navbar() {
     return (
         <div className={styles['navbar']}>
             <div className={styles['navbar--container']}>
-                <h1 style={{ color: theme.secondary }}>
-                    {shortname(headerData.name)}
-                </h1>
+                <h1 style={{ color: theme.secondary }}>{shortname(headerData.name)}</h1>
 
-                <IoMenuSharp
-                    className={classes.navMenu}
-                    onClick={handleDrawerOpen}
-                    aria-label="Menu"
-                />
+                <IoMenuSharp className={classes.navMenu} onClick={handleDrawerOpen} aria-label="Menu" />
             </div>
             <Drawer
                 variant="temporary"
@@ -177,71 +174,52 @@ function Navbar() {
 
                 <div onClick={handleDrawerClose}>
                     <div className={styles['navLink--container']}>
-                        <Fade left>
-                            <Link href="/">
-                                <div className={classes.drawerItem}>
-                                    <IoHomeSharp
-                                        className={classes.drawerIcon}
-                                    />
-                                    <span className={classes.drawerLinks}>
-                                        Home
-                                    </span>
-                                </div>
-                            </Link>
-                        </Fade>
-
-                        <Fade left>
-                            <Link href="/#about">
-                                <div className={classes.drawerItem}>
-                                    <FaUser className={classes.drawerIcon} />
-                                    <span className={classes.drawerLinks}>
-                                        About
-                                    </span>
-                                </div>
-                            </Link>
-                        </Fade>
-
-                        <Fade left>
-                            <Link href="/#resume">
-                                <div className={classes.drawerItem}>
-                                    <HiDocumentText
-                                        className={classes.drawerIcon}
-                                    />
-                                    <span className={classes.drawerLinks}>
-                                        Resume
-                                    </span>
-                                </div>
-                            </Link>
-                        </Fade>
-
-                        <Fade left>
-                            <Link href="/#services">
-                                <div className={classes.drawerItem}>
-                                    <BsFillGearFill
-                                        className={classes.drawerIcon}
-                                    />
-                                    <span className={classes.drawerLinks}>
-                                        Services
-                                    </span>
-                                </div>
-                            </Link>
-                        </Fade>
-
-                        <Fade left>
-                            <Link href="/#contacts">
-                                <div className={classes.drawerItem}>
-                                    <MdPhone className={classes.drawerIcon} />
-                                    <span className={classes.drawerLinks}>
-                                        Contact
-                                    </span>
-                                </div>
-                            </Link>
-                        </Fade>
+                        {navlinks.map((link, index) => {
+                            return (
+                                <Fade left key={index}>
+                                    <Link href={link.link}>
+                                        <div className={classes.drawerItem}>
+                                            <link.icon className={classes.drawerIcon} />
+                                            <span className={classes.drawerLinks}>{link.label}</span>
+                                        </div>
+                                    </Link>
+                                </Fade>
+                            )
+                        })}
                     </div>
                 </div>
             </Drawer>
         </div>
     )
 }
+
+const navlinks = [
+    {
+        label: 'Home',
+        link: '/',
+        hide: false,
+        icon: IoHomeSharp,
+    },
+    {
+        label: 'About',
+        link: '/#about',
+        icon: FaUser,
+    },
+    {
+        label: 'Resume',
+        link: '/#resume',
+        icon: HiDocumentText,
+    },
+    {
+        label: 'Services',
+        link: '/#services',
+        icon: BsFillGearFill,
+    },
+    {
+        label: 'Contact',
+        link: '/#contacts',
+        icon: MdPhone,
+    },
+]
 
 export default Navbar
