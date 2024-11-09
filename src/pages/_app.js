@@ -4,7 +4,7 @@ import { BackToTop } from '../components'
 import '../styles/App.css'
 import '../styles/index.css'
 import Head from 'next/head'
-import { faqSchema, personSchema, profilePageSchema } from './rich-result'
+import { faqSchema, personSchema, profilePageSchema } from '../seo/rich-result'
 
 const MyApp = ({ Component, pageProps }) => {
     console.log('%cDEVELOPER PORTFOLIO', `color:red; font-size:50px`)
