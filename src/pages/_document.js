@@ -2,7 +2,8 @@ import React from 'react'
 import Document, { Html, Main, NextScript, Head } from 'next/document'
 import { ServerStyleSheets } from '@material-ui/core/styles'
 
-const openGraphImage = '/images/profile.webp'
+const openGraphImage = 'https://himanshu-gunwant.com/images/profile.webp'
+const domain = 'https://himanshu-gunwant.com'
 
 export default class MyDocument extends Document {
     render() {
@@ -20,21 +21,21 @@ export default class MyDocument extends Document {
                     <meta property="og:image" content={openGraphImage} />
                     <meta property="og:site_name" content="Himanshu Gunwant's Portfolio" />
                     <meta property="og:title" content="Himanshu Gunwant: Software Engineer" />
-                    <meta property="og:url" content="https://himanshu-gunwant.com/" />
+                    <meta property="og:url" content={domain} />
                     <meta property="og:type" content="website" />
-                    <meta property="og:description" content="Himanshu Gunwant: Software Engineer at Acefone. Check out my portfolio and projects." />
+                    <meta property="og:description" content="Himanshu Gunwant: Software Engineer at Acefone." />
 
                     {/* Schema.org Meta Tags */}
                     <meta itemProp="name" content="Himanshu Gunwant's Portfolio" />
-                    <meta itemProp="url" content="https://himanshu-gunwant.com/" />
+                    <meta itemProp="url" content={domain} />
                     <meta itemProp="description" content="Himanshu Gunwant: Software Engineer at Acefone." />
                     <meta itemProp="image" content={openGraphImage} />
 
                     {/* Twitter Card Meta Tags */}
                     <meta name="twitter:card" content="summary_large_image" />
-                    <meta name="twitter:url" content="https://himanshu-gunwant.com/" />
+                    <meta name="twitter:url" content={domain} />
                     <meta name="twitter:title" content="Himanshu Gunwant: Software Engineer" />
-                    <meta name="twitter:description" content="Himanshu Gunwant: Software Engineer at Acefone. Check out my portfolio and projects." />
+                    <meta name="twitter:description" content="Himanshu Gunwant: Software Engineer at Acefone." />
                     <meta name="twitter:image" content={openGraphImage} />
                 </Head>
 
