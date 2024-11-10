@@ -10,6 +10,7 @@ import styles from './Landing.module.css'
 
 import { FaTwitter, FaLinkedin, FaGithub, FaYoutube, FaBlogger } from 'react-icons/fa'
 import { theme } from '../../data/themeData'
+import Image from 'next/image'
 
 const useStyles = makeStyles((t) => ({
     resumeBtn: {
@@ -94,7 +95,9 @@ function Landing() {
                         )}
                     </div>
                 </div>
-                <img
+                <Image
+                    width={400}
+                    height={400}
                     src={headerData.image}
                     alt=""
                     className={styles['landing--img']}
