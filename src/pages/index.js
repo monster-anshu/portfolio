@@ -17,6 +17,7 @@ import {
 } from '../components'
 import { headerData } from '../data/headerData'
 import Head from 'next/head'
+import VoiceBotRunner from '../components/VoiceAgent/VoiceAgent'
 
 function Main() {
     return (
@@ -26,6 +27,7 @@ function Main() {
             </Head>
 
             <Navbar />
+            <VoiceBotRunner />
             <Landing />
             <About />
             <Education />

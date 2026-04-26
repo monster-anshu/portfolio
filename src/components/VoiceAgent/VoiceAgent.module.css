@@ -1,0 +1,589 @@
+/* ─── Floating Action Button ─── */
+.fab {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    z-index: 9999;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    font-size: 1.6rem;
+    color: var(--va-secondary);
+    background: var(--va-primary);
+}
+
+.fab:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 28px rgba(0, 0, 0, 0.45);
+}
+
+.fab:active {
+    transform: scale(0.95);
+}
+
+/* subtle pulse ring behind FAB */
+.fabPulse {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    z-index: 9998;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--va-primary);
+    opacity: 0.35;
+    animation: fabPulseAnim 2.2s ease-out infinite;
+    pointer-events: none;
+}
+
+@keyframes fabPulseAnim {
+    0% {
+        transform: scale(1);
+        opacity: 0.35;
+    }
+
+    100% {
+        transform: scale(1.9);
+        opacity: 0;
+    }
+}
+
+/* ─── Overlay ─── */
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ─── Modal Card ─── */
+.modal {
+    position: relative;
+    width: 540px;
+    max-width: 95vw;
+    max-height: 85vh;
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: var(--va-secondary);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* ─── Header ─── */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+    flex-shrink: 0;
+}
+
+.headerActions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.statusBadge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 5px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    font-family: 'Poppins', sans-serif;
+}
+
+.statusDot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    animation: pulse 1.8s ease-in-out infinite;
+}
+
+.statusDotConnected {
+    background: #34d399;
+}
+
+.statusDotDisconnected {
+    background: #f87171;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+}
+
+.timer {
+    font-family: 'Roboto Mono', 'Roboto', monospace;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--va-tertiary);
+    font-variant-numeric: tabular-nums;
+}
+
+.disconnectBtn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 16px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: #ef4444;
+    color: #fff;
+    transition: background 0.2s ease, transform 0.15s ease;
+    flex-shrink: 0;
+}
+
+.disconnectBtn:hover {
+    background: #dc2626;
+    transform: scale(1.03);
+}
+
+.disconnectBtn:active {
+    transform: scale(0.97);
+}
+
+/* ─── Messages Area ─── */
+.messagesArea {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 180px;
+}
+
+.messagesArea::-webkit-scrollbar {
+    width: 4px;
+}
+
+.messagesArea::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 4px;
+}
+
+/* message rows */
+.messageRow {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    width: 100%;
+}
+
+.messageRowAssistant {
+    justify-content: flex-start;
+}
+
+.messageRowUser {
+    justify-content: flex-end;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.avatarBot {
+    background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 35%, #6366f1 70%, #3b82f6 100%);
+    color: #fff;
+}
+
+.avatarUser {
+    background: var(--va-primary);
+    color: var(--va-secondary);
+}
+
+.bubble {
+    max-width: 80%;
+    padding: 10px 14px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 16px;
+}
+
+.bubbleAssistant {
+    color: var(--va-tertiary);
+    background: transparent;
+    border-bottom-left-radius: 6px;
+}
+
+.bubbleUser {
+    background: var(--va-primary);
+    color: var(--va-secondary);
+    border-bottom-right-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* thinking indicator */
+.thinkingRow {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    justify-content: flex-start;
+}
+
+.thinkingBubble {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 16px;
+    border-bottom-left-radius: 6px;
+    border: 1px solid rgba(233, 173, 53, 0.2);
+    background: rgba(233, 173, 53, 0.08);
+    color: var(--va-primary);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    animation: thinkPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes thinkPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.55;
+    }
+}
+
+.spinIcon {
+    animation: spin 1s linear infinite;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ─── Text Input area ─── */
+.textInputWrapper {
+    flex-shrink: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 10px 16px;
+}
+
+.textInputContainer {
+    display: flex;
+    align-items: center;
+}
+
+/* ─── Controls Footer ─── */
+.controls {
+    flex-shrink: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.02);
+    padding: 24px;
+}
+
+.controlsInner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    position: relative;
+}
+
+/* glow behind mic button */
+.micGlow {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(1.15);
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.35), rgba(168, 85, 247, 0.35), rgba(59, 130, 246, 0.35));
+    opacity: 0.6;
+    filter: blur(18px);
+    pointer-events: none;
+}
+
+.micRing {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    padding: 6px;
+    background: linear-gradient(135deg, #8b5cf6 0%, #a855f7 50%, #3b82f6 100%);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.micBtn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--va-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: var(--va-tertiary);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.micBtn:hover {
+    transform: scale(1.06);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.micBtn:active {
+    transform: scale(0.94);
+}
+
+.micBtnMuted {
+    color: #ef4444;
+}
+
+.controlHint {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.72rem;
+    color: var(--va-tertiary50);
+}
+
+/* ─── Connect Screen (not yet connected) ─── */
+.connectScreen {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 24px;
+}
+
+.connectIcon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #8b5cf6, #a855f7, #3b82f6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(139, 92, 246, 0.35);
+}
+
+.connectTitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--va-tertiary);
+    text-align: center;
+}
+
+.connectDesc {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    color: var(--va-tertiary50);
+    text-align: center;
+    max-width: 280px;
+    line-height: 1.5;
+}
+
+.connectBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    border-radius: 999px;
+    border: 2px solid var(--va-primary);
+    background: var(--va-primary);
+    color: var(--va-secondary);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 16px rgba(233, 173, 53, 0.3);
+}
+
+.connectBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(233, 173, 53, 0.4);
+}
+
+.connectBtn:active {
+    transform: translateY(0);
+}
+
+.connectBtnConnecting {
+    opacity: 0.7;
+    cursor: wait;
+}
+
+/* ─── Close button ─── */
+.closeBtn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--va-tertiary70);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: background 0.2s ease, color 0.2s ease;
+    flex-shrink: 0;
+}
+
+.closeBtn:hover {
+    background: rgba(255, 255, 255, 0.18);
+    color: var(--va-tertiary);
+}
+
+/* Absolute close button for connect/connecting screens */
+.closeBtnAbsolute {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 10;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--va-tertiary70);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.closeBtnAbsolute:hover {
+    background: rgba(255, 255, 255, 0.18);
+    color: var(--va-tertiary);
+}
+
+/* ─── Error / Loading ─── */
+.loadingScreen {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    color: var(--va-tertiary50);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+}
+
+.errorCard {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    color: #f87171;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* ─── Responsive ─── */
+@media screen and (max-width: 480px) {
+    .fab {
+        bottom: 20px;
+        right: 20px;
+        width: 52px;
+        height: 52px;
+        font-size: 1.35rem;
+    }
+
+    .fabPulse {
+        bottom: 20px;
+        right: 20px;
+        width: 52px;
+        height: 52px;
+    }
+
+    .modal {
+        width: 100vw;
+        max-width: 100vw;
+        max-height: 100vh;
+        height: 100vh;
+        border-radius: 0;
+    }
+}
