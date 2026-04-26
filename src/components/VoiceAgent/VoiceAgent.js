@@ -227,7 +227,7 @@ const VoiceBotRunner = () => {
     const [sessionKey, setSessionKey] = useState(0)
 
     // const authUrl = voiceAgentWebrtcEndpoint;
-    const authUrl = 'http://server-2.himanshu-gunwant.com/api/v1/voice-agent/offer'
+    const authUrl = 'https://server-2.himanshu-gunwant.com/api/v1/voice-agent/offer'
 
     /* CSS custom-property bridge so the module CSS can use the theme */
     const themeVars = {
